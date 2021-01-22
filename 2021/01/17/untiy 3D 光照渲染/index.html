@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Unity3d光照渲染 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="untiy 3D 光照渲染1.HDR文件给skybox替换天空  Textture Type：cubemap  2.Lighting 界面  Scene 属性skybox 进行修改  3D 产品展示 3D environment插件（做一些简单 静态光照执行照明计算非常昂贵。延迟渲染使我们可以使用很多灯光，但是阴影仍然是一个限制因素。如果场景是动态的，那么我们将不可避免地执行这些计算。但是，如果光">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3d光照渲染">
+<meta property="og:url" content="http://example.com/2021/01/17/untiy%203D%20%E5%85%89%E7%85%A7%E6%B8%B2%E6%9F%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="untiy 3D 光照渲染1.HDR文件给skybox替换天空  Textture Type：cubemap  2.Lighting 界面  Scene 属性skybox 进行修改  3D 产品展示 3D environment插件（做一些简单 静态光照执行照明计算非常昂贵。延迟渲染使我们可以使用很多灯光，但是阴影仍然是一个限制因素。如果场景是动态的，那么我们将不可避免地执行这些计算。但是，如果光">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/MECHREVO/AppData/Roaming/Typora/typora-user-images/1607673822573.png">
+<meta property="article:published_time" content="2021-01-17T08:11:20.000Z">
+<meta property="article:modified_time" content="2021-01-17T08:17:28.341Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/MECHREVO/AppData/Roaming/Typora/typora-user-images/1607673822573.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-untiy 3D 光照渲染" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/untiy%203D%20%E5%85%89%E7%85%A7%E6%B8%B2%E6%9F%93/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T08:11:20.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Unity3d光照渲染
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="untiy-3D-光照渲染"><a href="#untiy-3D-光照渲染" class="headerlink" title="untiy 3D 光照渲染"></a>untiy 3D 光照渲染</h1><p>1.HDR文件给skybox替换天空</p>
+<ul>
+<li>Textture Type：cubemap</li>
+</ul>
+<p>2.Lighting 界面</p>
+<ul>
+<li>Scene 属性skybox 进行修改</li>
+</ul>
+<p>3D 产品展示</p>
+<p>3D environment插件（做一些简单</p>
+<h2 id="静态光照"><a href="#静态光照" class="headerlink" title="静态光照"></a>静态光照</h2><p>执行照明计算非常昂贵。延迟渲染使我们可以使用很多灯光，但是阴影仍然是一个限制因素。如果场景是动态的，那么我们将不可避免地执行这些计算。但是，如果光源和几何物体都不变，那么我们可以只计算一次光源并重复使用它。这样的话就可以在我们的场景中放置许多灯光，而又不必在运行时渲染它们。也可以使用区域光，但这些区域光同样不能用作实时照明。</p>
+<h3 id="1-1烘培光"><a href="#1-1烘培光" class="headerlink" title="1.1烘培光"></a>1.1烘培光</h3><p><img src="C:\Users\MECHREVO\AppData\Roaming\Typora\typora-user-images\1607673822573.png" alt="1607673822573"></p>
+<p>主定向光转换为烘培光之后，它不再包含在动态光照中。 对于动态对象，就不存在光，只剩下环境照明。</p>
+<p>Lighting窗口中（window-rendering-lighting settig)</p>
+<p>实际启用灯光映射，在<strong>Mixed LIghting</strong> 中</p>
+<ul>
+<li>Lighting Mode设置为 Baked Indirect   ——向场景添加间接光</li>
+<li>启用 Baked Global Illumination</li>
+</ul>
+<h4 id="Ambient-Occlusion"><a href="#Ambient-Occlusion" class="headerlink" title="Ambient Occlusion"></a><em>Ambient Occlusion</em></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/untiy%203D%20%E5%85%89%E7%85%A7%E6%B8%B2%E6%9F%93/" data-id="ckk7nbzoq0002xww558ujcifn" data-title="Unity3d光照渲染" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/01/17/Unity3D%20%E5%85%89%E7%85%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Unity3D光照
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/17/Naninovel%E5%BC%80%E5%9D%91%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Naninovel开坑笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/19/Unity%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Ruby%E2%80%98s%20Adventure/">Unity教程笔记——Ruby‘s Adventure</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/17/Coroutine%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F/">Coroutine</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/17/Unity3D%20%E5%85%89%E7%85%A7/">Unity3D光照</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/17/untiy%203D%20%E5%85%89%E7%85%A7%E6%B8%B2%E6%9F%93/">Unity3d光照渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/17/Naninovel%E5%BC%80%E5%9D%91%E7%AC%94%E8%AE%B0/">Naninovel开坑笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
