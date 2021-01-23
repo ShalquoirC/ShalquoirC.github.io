@@ -213,7 +213,7 @@
 <li>如果使用yield x（x是指一个具体的对象或数值）的话，那么movenext返回为true并且current被赋值为x</li>
 <li>如果使用yield break使得movenext()返回false。 </li>
 </ul>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">LongComputation</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(someCondition)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* 做一系列的工作 */</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 在这里暂停然后在下一帧继续执行</span></span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><span class="line"><span class="function">IEnumerator <span class="title">LongComputation</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(someCondition)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* 做一系列的工作 */</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 在这里暂停然后在下一帧继续执行</span></span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre>
 
 
 <p>StopCoroutine(string methodName)</p>
@@ -233,12 +233,12 @@
 <div class="nav">
   
   <div class="nav-item-prev">
-    <a href="/2021/01/19/Unity教程笔记——Ruby‘s Adventure/" class="nav-link">
+    <a href="/2021/01/17/Naninovel开坑笔记/" class="nav-link">
       <i class="iconfont icon-left nav-prev-icon"></i>
       <div>
         <div class="nav-label">Prev</div>
         
-        <div class="nav-title">Unity教程笔记——Ruby‘s Adventure </div>
+        <div class="nav-title">Naninovel开坑笔记 </div>
         
       </div>
     </a>
@@ -246,11 +246,11 @@
   
   
   <div class="nav-item-next">
-    <a href="/2021/01/17/Naninovel开坑笔记/" class="nav-link">
+    <a href="/2021/01/17/Unity3D 光照/" class="nav-link">
       <div>
         <div class="nav-label">Next</div>
         
-        <div class="nav-title">Naninovel开坑笔记 </div>
+        <div class="nav-title">Unity3D光照 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -342,12 +342,12 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-01-17</div>
-        <a href="/2021/01/17/Coroutine协同程序/"><div class="recent-posts-item-content">Coroutine</div></a>
+        <a href="/2021/01/17/Naninovel开坑笔记/"><div class="recent-posts-item-content">Naninovel开坑笔记</div></a>
       </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-01-17</div>
-        <a href="/2021/01/17/Naninovel开坑笔记/"><div class="recent-posts-item-content">Naninovel开坑笔记</div></a>
+        <a href="/2021/01/17/Coroutine协同程序/"><div class="recent-posts-item-content">Coroutine</div></a>
       </div>
     
       <div class="recent-posts-item">
